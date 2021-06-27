@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVGAb本地播放器</title>
+    <style>
+        .svgarender{
+            display: flex;
+            justify-content: flex-start;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="Canvas" class="svgarender"></div>
+    <script src="./svga.min.js"></script>
+    <script>
+         let player = new SVGA.Player("#Canvas")
+        var parser = new SVGA.Parser()
+        parser.load('https://obs-public-recourse.oss-cn-beijing.aliyuncs.com/5.svga', function(videoItem) {
+                console.log(videoItem)
+                player.setVideoItem(videoItem);
+                player.loops = 1;
+                player.startAnimation();
+            })
+    </script>
+
+  </body>
+</html>
