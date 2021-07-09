@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div id="Canvas" :style=rendersize></div>
+    <div id="Canvas" class="render"></div>
 
 </div>
 </template>
@@ -16,10 +16,6 @@ export default defineComponent({
     },
     setup() {
         const state = reactive({
-            rendersize : {
-                "display": "flex",
-                "justify-content": "flex-start"
-            },
         })
         
         const route = useRoute()
@@ -49,4 +45,8 @@ export default defineComponent({
 
 <style scoped>
 
+.render{
+    width:100vw ;
+            height: 100vh;
+}
 </style>
